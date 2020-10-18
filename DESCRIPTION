@@ -23,4 +23,5 @@ Imports:
     tigris,
     geojsonio,
     DT,
-    echarts4r
+    echarts4r,
+    magrittr

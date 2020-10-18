@@ -23,6 +23,9 @@ raw_vietnam <- data %>%
            cumulative_death = cumsum(deaths)) %>%
     mutate(dateRep = dmy(dateRep))
 
+patient_node <- patient_node() %>%
+  mutate(date_announced = as.Date(date_announced, format = "%d-%b-%y"))
+
 # First tab - prepare data
 ## get json file
 vietnam_map <- geojson_read("https://data.opendevelopmentmekong.net/dataset/999c96d8-fae0-4b82-9a2b-e481f6f50e12/resource/2818c2c5-e9c3-440b-a9b8-3029d7298065/download/diaphantinhenglish.geojson", what = "sp")
