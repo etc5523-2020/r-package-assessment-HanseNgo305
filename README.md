@@ -1,10 +1,5 @@
----
-title: vietnamcovid19
-output: github_document
----
 
-
-
+# vietnamcovid19
 <!-- badges: start -->
 <!-- badges: end -->
 
