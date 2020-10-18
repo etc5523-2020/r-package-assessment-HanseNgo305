@@ -3,6 +3,7 @@
 export("%>%")
 export(launch_app)
 export(patient_link)
+export(patient_node)
 export(readData)
 export(vietnam_daily)
 importFrom(magrittr,"%>%")

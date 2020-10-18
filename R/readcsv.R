@@ -15,4 +15,6 @@ vietnam_daily <- readData("vn_by_province")
 # Second tab - prepare data
 ## read edges and nodes
 patient_link <- readData("patient_link")
+
+#' @export
 patient_node <- readData("patient_details")

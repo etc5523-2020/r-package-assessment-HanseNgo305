@@ -23,33 +23,18 @@ raw_vietnam <- data %>%
            cumulative_death = cumsum(deaths)) %>%
     mutate(dateRep = dmy(dateRep))
 
-patient_node <- patient_node() %>%
-  mutate(date_announced = as.Date(date_announced, format = "%d-%b-%y"))
-
 # First tab - prepare data
 ## get json file
 vietnam_map <- geojson_read("https://data.opendevelopmentmekong.net/dataset/999c96d8-fae0-4b82-9a2b-e481f6f50e12/resource/2818c2c5-e9c3-440b-a9b8-3029d7298065/download/diaphantinhenglish.geojson", what = "sp")
-
-## vietnamdaily
-vietnam_daily <- read.csv(here::here("vn_by_province.csv"))
 
 ## merge json with data
 vn_map_merged <- geo_join(vietnam_map, vietnam_daily, "Name", "province")
 
 bins_vn <- c(0, 1, 10, 50, 100, 500, Inf)
-pal_vn <- colorBin("YlOrRd", domain = vn_map_merged$cummulative_case, bins = bins)
+pal_vn <- colorBin("YlOrRd", domain = vn_map_merged$cummulative_case, bins = bins_vn)
 labels_vn <- sprintf(
   "<strong>%s</strong><br/>Total cases: %g<br/>Total Active: %g<br/>Death:%g",
   vn_map_merged$province, vn_map_merged$cummulative_case, vn_map_merged$Active,vn_map_merged$Death) %>% lapply(htmltools::HTML)
-
-# Second tab - prepare data
-
-## read edges and nodes
-patient_link <- read.csv(here::here("patient_link.csv"))
-patient_node <- read.csv(here::here("patient_details.csv"))
-patient_node <- patient_node %>%  
-  mutate(date_announced = as.Date(date_announced, format = "%d-%b-%y"))
-
 
 # Third tab - prepare world map
 
@@ -274,6 +259,8 @@ ui <- navbarPage(inverse = TRUE, "The Vietnam COVID-19",
 #------- SERVER FROM HERE ---------------------------------------------------------------------------------
 
 server <- function(input, output, session) {
+  patient_node <- patient_node %>%
+    mutate(date_announced = as.Date(date_announced, format = "%d-%b-%y"))
   
   # BULLENTIN BOARD - Page 1
   ## Value box
