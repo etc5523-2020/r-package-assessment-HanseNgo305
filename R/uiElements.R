@@ -52,10 +52,10 @@ aboutNote <- function() {
          tags$h4("References"),
          tags$hr(),
          tags$div(tags$ul(tags$strong("R packages used"),
-           output_ref()
+           unique(output_ref("packages"))
          )),
          tags$div(tags$ul(tags$strong("External sources"),
-                          external_ref()
+                          unique(output_ref("link"))
          ))
   )
 }

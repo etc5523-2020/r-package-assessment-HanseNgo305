@@ -3,7 +3,6 @@
 export("%>%")
 export(aboutNote)
 export(bulletinNote)
-export(external_ref)
 export(launch_app)
 export(output_ref)
 export(patient_link)

@@ -2,10 +2,18 @@
 % Please edit documentation in R/about_function.R
 \name{output_ref}
 \alias{output_ref}
-\title{Create function to generate reference for libraries used}
+\title{Create function to generate reference}
 \usage{
-output_ref()
+output_ref(type)
+}
+\arguments{
+\item{type}{The type of references, either 'packages' or 'link'}
 }
 \description{
-Create function to generate reference for libraries used
+This function provides the list of R packages used and external resources to add in the Reference section
+}
+\examples{
+output_ref("link")
+output_ref("packages")
+
 }
