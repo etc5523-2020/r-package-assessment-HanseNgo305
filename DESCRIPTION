@@ -25,3 +25,5 @@ Imports:
     DT,
     echarts4r,
     magrittr
+Suggests: 
+    testthat

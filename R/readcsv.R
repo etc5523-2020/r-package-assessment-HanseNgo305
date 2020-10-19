@@ -1,5 +1,7 @@
 #' Gather all function to read csv in the server
 #' 
+#' @description This function is used to read all of the local csv files and assign to variables for later use
+#' 
 #' @importFrom utils read.csv
 #' @export
 

@@ -7,5 +7,5 @@
 readData(name)
 }
 \description{
-Gather all function to read csv in the server
+This function is used to read all of the local csv files and assign to variables for later use
 }

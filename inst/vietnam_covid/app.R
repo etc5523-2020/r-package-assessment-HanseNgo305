@@ -15,13 +15,7 @@ library(echarts4r)
 
 # Read data and clean up for number of cases, deaths by days
 data <- read.csv("https://opendata.ecdc.europa.eu/covid19/casedistribution/csv", na.strings = "", fileEncoding = "UTF-8-BOM")
-raw_vietnam <- data %>%
-    filter(countriesAndTerritories == "Vietnam") %>%
-    select(dateRep, day, month, year, cases, deaths, popData2019) %>%
-    arrange(year, month, day) %>%
-    mutate(cumulative_case = cumsum(cases),
-           cumulative_death = cumsum(deaths)) %>%
-    mutate(dateRep = dmy(dateRep))
+
 
 # First tab - prepare data
 ## get json file
@@ -34,7 +28,8 @@ bins_vn <- c(0, 1, 10, 50, 100, 500, Inf)
 pal_vn <- colorBin("YlOrRd", domain = vn_map_merged$cummulative_case, bins = bins_vn)
 labels_vn <- sprintf(
   "<strong>%s</strong><br/>Total cases: %g<br/>Total Active: %g<br/>Death:%g",
-  vn_map_merged$province, vn_map_merged$cummulative_case, vn_map_merged$Active,vn_map_merged$Death) %>% lapply(htmltools::HTML)
+  vn_map_merged$province, vn_map_merged$cummulative_case, vn_map_merged$Active,vn_map_merged$Death) %>% 
+  lapply(htmltools::HTML)
 
 # Third tab - prepare world map
 
@@ -193,10 +188,7 @@ ui <- navbarPage(inverse = TRUE, "The Vietnam COVID-19",
     # Fourth tab - About
     tabPanel("About",
         fluidPage(fluidRow(
-          column(5,
-                 tags$img(src = "vietnam-stamp.jpg")),
-          aboutNote()
-    )
+          column(5, tags$img(src = "vietnam-stamp.jpg")), aboutNote())
 )))
 
 #------- SERVER FROM HERE ---------------------------------------------------------------------------------
