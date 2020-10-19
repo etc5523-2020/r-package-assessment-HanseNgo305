@@ -195,45 +195,7 @@ ui <- navbarPage(inverse = TRUE, "The Vietnam COVID-19",
         fluidPage(fluidRow(
           column(5,
                  tags$img(src = "vietnam-stamp.jpg")),
-          column(7,
-                 tags$h4("About this app"),
-                 tags$hr(),
-                 tags$body("This app was created with an original purpose as an assignment to submit to a university class. 
-                        However, I hope this app will be put into a greater use than what it was meant to be. 
-                        Compared to other countries in the area, Vietnam lacked an effective channel to communicate with people.
-                        The Government set up one main channel at the MOH website (link below) to keep people up to date. However, such source stopped at basic information only and lack informative analysis (Not to mention the apprearance was not exactly catchy).
-                        Data was outdated, inconsistent across sources and was not available to download for any purposes, which posed as the biggest challenge when i created this app.
-                        I hoped you who are reading this section will find the app helpful to get to know my country better and how we are courageously fighting the pandemic to leave no one behind.
-                        "),
-                 tags$p("Please find the link to the Vietnamese Covis-19 information center here: "),
-                 tags$a("https://ncov.moh.gov.vn/web/guest/trang-chu"),
-                 tags$br(),
-                 tags$p("This app was created by Hanh Ngo, student id -31196101, student of the Master of Business Analytics program in Monash University.
-                 This app was greatly inspired by the Covid - 19 bulletin board developed by Su Wei for the Japan Government (link provided in the References).
-                        Data was not updated automatically so some information might be outdated by the time you are reading this report. Please read with caution."),
-                 tags$h4("References"),
-                 tags$hr(),
-                 tags$div(tags$ul("R packages used: ",
-                   tags$li(tags$span("shiny")),
-                   tags$li(tags$span("shinydashboard")),
-                   tags$li(tags$span("shinydashboardPlus")),
-                   tags$li(tags$span("tidyverse")),
-                   tags$li(tags$span("plotly")),
-                   tags$li(tags$span("lubridate")),
-                   tags$li(tags$span("leaflet")),
-                   tags$li(tags$span("rgdal")),
-                   tags$li(tags$span("tigris")),
-                   tags$li(tags$span("geojsonio")),
-                   tags$li(tags$span("DT")),
-                   tags$li(tags$span("echarts4r"))
-                 )),
-                 tags$p("Face Mask Man icon. UXWing. (2020). Retrieved 9 October 2020, from https://uxwing.com/face-mask-man-icon/"),
-                 tags$p("Le, B. (2020). Vietnam Choropleth map. Raw.githubusercontent.com. Retrieved 9 October 2020, from https://raw.githubusercontent.com/lebinh/vietnam-choropleth-map/master/vn.json."),
-                 tags$p("Sievert, C. (2020). 17 Server-side linking with shiny | Interactive web-based data visualization with R, plotly, and shiny. Plotly-r.com. Retrieved 9 October 2020, from https://plotly-r.com/linking-views-with-shiny.html#shiny-performance."),
-                 tags$p("Số ca nhiễm COVID-19 theo tỉnh thành Việt Nam. Vi.wikipedia.org. (2020). Retrieved 9 October 2020, from https://vi.wikipedia.org/wiki/B%E1%BA%A3n_m%E1%BA%ABu:S%E1%BB%91_ca_nhi%E1%BB%85m_COVID-19_theo_t%E1%BB%89nh_th%C3%A0nh_Vi%E1%BB%87t_Nam."),
-                 tags$p("TRANG TIN VỀ DỊCH BỆNH VIÊM ĐƯỜNG HÔ HẤP CẤP COVID-19 - Bộ Y tế - Trang tin về dịch bệnh viêm đường hô hấp cấp COVID-19. Bộ Y tế - Trang tin về dịch bệnh viêm đường hô hấp cấp COVID-19. (2020). Retrieved 9 October 2020, from https://ncov.moh.gov.vn/web/guest/trang-chu."),
-                 tags$p("Wei, S. (2020). 🦠新型コロナウイルス感染速報. Covid-2019.live. Retrieved 9 October 2020, from https://covid-2019.live/en/.")
-             )
+          aboutNote()
     )
 )))
 
