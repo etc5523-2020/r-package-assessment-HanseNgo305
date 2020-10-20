@@ -1,6 +1,7 @@
 pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
-articles: {}
-last_built: 2020-10-20T17:31Z
+articles:
+  vietnamcovid19-package: vietnamcovid19-package.html
+last_built: 2020-10-20T19:24Z
 
