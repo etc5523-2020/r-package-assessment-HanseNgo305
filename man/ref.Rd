@@ -3,22 +3,17 @@
 \docType{data}
 \name{ref}
 \alias{ref}
-\title{Create function to generate reference}
+\title{Return list of references used in the app}
 \format{
 An object of class \code{data.frame} with 12 rows and 2 columns.
 }
 \usage{
 ref
 }
-\arguments{
-\item{type}{The type of references, either 'packages' or 'link'}
-}
 \description{
-This function provides the list of R packages used and external resources to add in the Reference section
+the ref function returns the list of R packages and external resources refered in the app. As both packages and external links are gathered into one data frame, duplication of values may occur.
 }
 \examples{
-library(shiny)
-output_ref("link")
-output_ref("packages")
+ref
 }
 \keyword{datasets}

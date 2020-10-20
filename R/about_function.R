@@ -1,14 +1,11 @@
-#' Create function to generate reference
+#' Return list of references used in the app
 #' 
-#' @description This function provides the list of R packages used and external resources to add in the Reference section
+#' @description the ref function returns the list of R packages and external resources refered in the app. As both packages and external links are gathered into one data frame, duplication of values may occur.
 #' 
-#' @param type The type of references, either 'packages' or 'link'
 #' 
 #' @examples
-#' library(shiny)
-#' output_ref("link")
-#' output_ref("packages")
-
+#' ref
+#' @export
 ref <- data.frame("packages" = c("shiny","shinydashboard","shinydashboardPlus","tidyverse",
                                  "plotly","lubridate", "leaflet","rgdal", "tigris", 
                                  "geojsonio", "DT", "echarts4r"),
@@ -20,6 +17,17 @@ ref <- data.frame("packages" = c("shiny","shinydashboard","shinydashboardPlus","
                              "TRANG TIN VỀ DỊCH BỆNH VIÊM ĐƯỜNG HÔ HẤP CẤP COVID-19 - Bộ Y tế - Trang tin về dịch bệnh viêm đường hô hấp cấp COVID-19. Bộ Y tế - Trang tin về dịch bệnh viêm đường hô hấp cấp COVID-19. (2020). Retrieved 9 October 2020, from https://ncov.moh.gov.vn/web/guest/trang-chu."
                   )
 )
+
+#' Create function to generate reference
+#' 
+#' @description This function provides the list of R packages and external resources added in the Reference section
+#' 
+#' @param type The type of references, either 'packages' or 'link'
+#' 
+#' @examples
+#' library(shiny)
+#' output_ref("link")
+#' output_ref("packages")
 #' @export
 output_ref <- function(type) {
   vars <- c("link", "packages")

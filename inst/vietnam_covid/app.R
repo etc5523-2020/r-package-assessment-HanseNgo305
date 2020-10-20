@@ -32,7 +32,6 @@ labels_vn <- sprintf(
   lapply(htmltools::HTML)
 
 # Third tab - prepare world map
-
 ## Prepare data for world map
 world_data <- data %>%
     group_by(countriesAndTerritories) %>%
@@ -194,8 +193,6 @@ ui <- navbarPage(inverse = TRUE, "The Vietnam COVID-19",
 #------- SERVER FROM HERE ---------------------------------------------------------------------------------
 
 server <- function(input, output, session) {
-  patient_node <- patient_node %>%
-    mutate(date_announced = as.Date(date_announced, format = "%d-%b-%y"))
   
   # BULLENTIN BOARD - Page 1
   ## Value box
@@ -254,7 +251,6 @@ server <- function(input, output, session) {
    ## Daily bar chart
    output$Dailybarchart <- renderPlotly({
      p4 <- patient_node %>%
-       mutate(date_announced = as.Date(date_announced, format = "%d-%b-%y")) %>%
        count(date_announced) %>%
        rename("cases" = n) %>%
        arrange(date_announced) %>%
@@ -281,7 +277,6 @@ server <- function(input, output, session) {
      if (is.null(SelectedBar())) return(NULL)
      
      patient_node %>%
-       mutate(date_announced = as.Date(date_announced, format = "%d-%b-%y")) %>%
        filter(date_announced %in% SelectedBar()) %>%
        arrange(desc(id_no)) %>%
        select(to, gender, treatment_location, status, nationality, type, date_announced) %>%
