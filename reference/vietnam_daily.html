@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gather all function to read csv in the server — readData • vietnamcovid19</title>
+<title>Read the csv file for Vietnam cases by province — vietnam_daily • vietnamcovid19</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Gather all function to read csv in the server — readData" />
-<meta property="og:description" content="This function is used to read all of the local csv files and assign to variables for later use" />
+<meta property="og:title" content="Read the csv file for Vietnam cases by province — vietnam_daily" />
+<meta property="og:description" content="Return the dataset for Vietnam cases and deaths by province updated the latest by 10 Oct 2020" />
 
 
 
@@ -103,26 +103,21 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Gather all function to read csv in the server</h1>
+    <h1>Read the csv file for Vietnam cases by province</h1>
     
-    <div class="hidden name"><code>readData.Rd</code></div>
+    <div class="hidden name"><code>vietnam_daily.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function is used to read all of the local csv files and assign to variables for later use</p>
+    <p>Return the dataset for Vietnam cases and deaths by province updated the latest by 10 Oct 2020</p>
     </div>
 
-    <pre class="usage"><span class='fu'>readData</span><span class='op'>(</span><span class='va'>name</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='va'>vietnam_daily</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>name</th>
-      <td><p>name of the csv file with out the ".csv". Cases and typos sensitive</p></td>
-    </tr>
-    </table>
 
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>An object of class <code>data.frame</code> with 43 rows and 5 columns.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
