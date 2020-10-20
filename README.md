@@ -1,6 +1,7 @@
 
 # vietnamcovid19
 <!-- badges: start -->
+[![R build status](https://github.com/etc5523-2020/r-package-assessment-HanseNgo305/workflows/R-CMD-check/badge.svg)](https://github.com/etc5523-2020/r-package-assessment-HanseNgo305/actions)
 <!-- badges: end -->
 
 The goal of _vietnamcovid19_ is to provide a simple dashboard to report the situation of Covid-19 in Vietnam from the January 2020 to October 2020.
