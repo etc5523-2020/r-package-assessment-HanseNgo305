@@ -1,10 +1,11 @@
-#' UI Elements
-#'
-#'
+#' Function to return the note section in the Bulletin Board package
+#' 
+#' @description This function is used to gather all the comments for the Bulletin board in one place
+#' 
+#' 
 #' @export
 
 #### Bulletin Board ####
-
 bulletinNote <- function() {
   column(5, 
          tags$h3("Vietnam case map by 6-Oct-2020"),
@@ -28,11 +29,14 @@ bulletinNote <- function() {
   )
 }
 
+#' Function to return the note section in the Bulletin Board package
+#' 
+#' @description This function is used to gather all the comments for the About section in one place
+#' 
+#' 
 #' @export
 ##### About#####
 aboutNote <- function() {
-  library_used <- c("shiny", "shinydashboard","shinydashboardPlus","tidyverse","plotly",
-                    "lubridate", "leaflet","rgdal", "tigris", "geojsonio", "DT", "echarts4r")
   column(7,
          tags$h4("About this app"),
          tags$hr(),

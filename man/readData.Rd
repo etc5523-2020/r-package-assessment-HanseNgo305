@@ -6,6 +6,9 @@
 \usage{
 readData(name)
 }
+\arguments{
+\item{name}{name of the csv file with out the ".csv". Cases and typos sensitive}
+}
 \description{
 This function is used to read all of the local csv files and assign to variables for later use
 }
