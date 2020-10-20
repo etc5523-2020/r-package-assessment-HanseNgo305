@@ -17,9 +17,22 @@ devtools::install_github("etc5523-2020/r-package-assessment-HanseNgo305")
 
 ## Example
 
-After installing, you can call out the package using:
+Some function you can use in this package would include
 
 ``` r
 library(vietnamcovid19)
+library(tibble)
+
+# launch the app
+# launch_app()
+
+# Check the dataset for Vietnam cases and deaths by province
+vietnam_daily
+
+# Check the dataset for Vietnam patients
+patient_node
+
+# Check the list of references used
+ref
 ```
 
