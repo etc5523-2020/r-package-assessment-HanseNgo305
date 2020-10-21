@@ -6,7 +6,7 @@ description: >
   Here you will learn how to deploy the app, locate the packages components and the arragement of the files
   so you will know where to look at should you want to learn how the package was built.
 vignette: >
-  %\VignetteIndexEntry{vietnamcovid19-package}
+  %\VignetteIndexEntry{Introduction to the vietnamcovid19 package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -15,6 +15,7 @@ vignette: >
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
-```{r setup}
+```{r setup, eval = FALSE}
 library(vietnamcovid19)
 ```
+
