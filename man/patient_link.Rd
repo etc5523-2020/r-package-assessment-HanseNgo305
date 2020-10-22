@@ -3,14 +3,40 @@
 \docType{data}
 \name{patient_link}
 \alias{patient_link}
-\title{Read the csv file for the patient infection route in Vietnam, last updated by 10 Oct 2020}
+\title{Patient infection route in Vietnam}
 \format{
 An object of class \code{data.frame} with 975 rows and 17 columns.
+}
+\source{
+Vietnam's MOH at \url{https://ncov.moh.gov.vn}
 }
 \usage{
 patient_link
 }
 \description{
-Return the dataset for patient infection route.
+This dataset contained information of patients linkage as well as other information of the infected.
+This list is not exhaustive as not all infected sources can be identified. Information is gathered based on
+the MOH's daily announcement of patients' travelling history which was last updated by 10 Oct 2020.
+}
+\details{
+The dataset contained the following variables:
+\tabular{ll}{
+from: \tab The patient id of source of infection \cr
+to: \tab The patient id of the infected  \cr
+dob: \tab The date of birth of the infected \cr
+age: \tab The age of the infected by 2020 \cr
+gender: \tab The gender of the infected \cr
+address: \tab living address of the infected  \cr
+treatment_location: \tab the treatment location of the infected. Could differ from the address as patients are treated focusly in some specialised medical centres.  \cr
+status: \tab either "Active", "Recovered", "Deceased" or "Other". Other indicated patients'death of other causes rather than of Covid-19.  \cr
+type: \tab type of infection. Either "foreign expert", from oversea", "health-care worker", "illegal immigrated", "quarantine upon entry" or "social setting'. Meaning of each type is noted in the app\cr
+nationality: \tab nationality of the infected \cr
+date_announced: \tab date announced of the confirmed case \cr
+month_announced: \tab month announced of the confirmed case  \cr
+death_announced: \tab date announced of the deceased \cr
+vessel_no: \tab The vessel that transported the infected into Vietnam; for cases coming back from oversea only. \cr
+flight_from: \tab The departed destination of the infected before coming into Vietnam; for cases coming back from oversea only. \cr
+note: \tab Additional note \cr
+}
 }
 \keyword{datasets}

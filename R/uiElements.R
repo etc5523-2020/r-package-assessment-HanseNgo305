@@ -1,7 +1,7 @@
-#' Function to return the note section in the Bulletin Board package
+#' Return the note section in the Bulletin Board package
 #' 
-#' @description This function is used to gather all the comments for the Bulletin board in one place
-#' 
+#' @description This function is used to refactor the UI by gathering all the comments for the Bulletin board in one place then later deploy to the app.
+#' This function is created for the app's usage only and cannot be called alone in the console.
 #' 
 #' @export
 
@@ -29,10 +29,10 @@ bulletinNote <- function() {
   )
 }
 
-#' Function to return the note section in the Bulletin Board package
+#' Return the note section in the Bulletin Board package
 #' 
-#' @description This function is used to gather all the comments for the About section in one place
-#' 
+#' @description This function is used to refactor the UI by gathering all the comments for the About section in one place then later deploy to the app.
+#' This function is created for the app's usage only and cannot be called alone in the console.
 #' 
 #' @export
 ##### About#####

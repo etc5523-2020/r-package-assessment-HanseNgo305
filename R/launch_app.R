@@ -1,6 +1,7 @@
 #' Launch the dashboard for Vietnam Covid-19
 #' 
-#' @description this function will launch the shiny app dashboard embedded in the package
+#' @description this function will launch the shiny app dashboard that was embedded in the package.
+#' After you installed the package, simply load the package and type the command launch_app() in the console.
 #' 
 #' @export
 

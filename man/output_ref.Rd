@@ -14,6 +14,7 @@ This function provides the list of R packages and external resources added in th
 }
 \examples{
 library(shiny)
+library(tibble)
 output_ref("link")
 output_ref("packages")
 }

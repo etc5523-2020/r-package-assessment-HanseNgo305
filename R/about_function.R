@@ -1,9 +1,9 @@
-#' Return list of references used in the app
+#' List of references used in the app
 #' 
 #' @description the ref function returns the list of R packages and external resources refered in the app. As both packages and external links are gathered into one data frame, duplication of values may occur.
 #' 
-#' 
 #' @examples
+#' library(tibble)
 #' ref
 #' @export
 ref <- data.frame("packages" = c("shiny","shinydashboard","shinydashboardPlus","tidyverse",
@@ -26,6 +26,7 @@ ref <- data.frame("packages" = c("shiny","shinydashboard","shinydashboardPlus","
 #' 
 #' @examples
 #' library(shiny)
+#' library(tibble)
 #' output_ref("link")
 #' output_ref("packages")
 #' @export

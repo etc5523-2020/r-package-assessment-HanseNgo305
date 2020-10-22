@@ -3,7 +3,7 @@
 \docType{data}
 \name{patient_node}
 \alias{patient_node}
-\title{Read the csv file for details of infected patients in Vietnam}
+\title{Vietnam patients'details}
 \format{
 An object of class \code{data.frame} with 1099 rows and 21 columns.
 }
@@ -14,7 +14,7 @@ Vietnam's MOH at https://ncov.moh.gov.vn/web/guest/trang-chu
 patient_node
 }
 \description{
-Return the dataset for patient details.
+This dataset contained details of all the confirmed cases recorded in Vietnam by 10 October 2020.
 }
 \details{
 The dataset would include details of each confirmed cases in Vietnam. Main information provided would include the patient id number,

@@ -12,10 +12,92 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", 
+                      message = FALSE, warning = FALSE,
+                      fig.width = 7,
+                      fig.height = 5)
 ```
 
-```{r setup, eval = FALSE}
+# Overview
+
+```{r setup}
 library(vietnamcovid19)
+```
+
+This package provides a Shiny dashboard which report the Covid-19 situation in Vietnam from the first outbreak in January till the latest date of 10 October 2020. Data was manually collected which, at this point of time, cannot be automatically updated to reflect the most recent situation. 
+
+The app can be launched via:
+
+```{r launch-example, eval=FALSE}
+library(vietnamcovid19)
+launch_app()
+```
+
+# Other datasets that go with the app
+
+This package also featured three datasets that were used to build up the content of the app. You can easily access the datasets by using the syntax function presented in the following section. All data is collected manually from the Vietnam [MOH's web page for Covid-19](https://ncov.moh.gov.vn).
+
+## The Vietnam taily by province
+The first dataset provided is the `vietnam_daily` dataset, which contains tallies for active cases, deaths, and recovered for Vietnam by provinces. Not all provinces are featured in this dataset, only
+`r nrow(vietnam_daily)` provinces which reported confirmed cases are featured as of 10 Oct 2020.
+
+This dataset is used for the the chrolopeth map in the first page - "Bulletin Board" in the app.
+
+You can call out the dataset by using:
+```{r vietnam-data}
+library(vietnamcovid19)
+library(tibble)
+head(vietnam_daily, n = 10)
+```
+
+## Patient details
+
+The next dataset is the `patient_node` dataset which contains the details of each confirmed patients in Vietnam, including the patient id, age, gender, status, nationality, address and many more. The term "node" is used as a reminder as data in this dataset would be used to construct the nodes for the network chart in page 2 - the "Infection Route" of the app.
+
+A subset of the dataset is shown below:
+
+```{r patient-node}
+library(vietnamcovid19)
+library(tibble)
+library(dplyr)
+patient_node %>%
+  select(2:9) %>%
+  head(n = 10)
+```
+
+## Infection routes
+
+The last dataset featured in this package is the `patient_link`. Same as the `patient_node`, the term "link" is also a reminder to construct the link between nodes for the network chart in page 2 - "Infection Route". Information in this dataset was roughly the same for the previous one. However, only patients whom we can identify the source of infection and the patients who were the source of infection themselves were included in this dataset. Following information from the date of birth (dob) is for the infected (the patients listed under the "to" column).
+
+A extract of the first 10 records in first 8 variables are shown below:
+
+```{r patient-link}
+library(vietnamcovid19)
+library(tibble)
+library(dplyr)
+patient_link %>%
+  select(1:8) %>%
+  head(n = 10)
+```
+
+## A dataset demo
+
+Finally, we will have a look at the dataset at work. Below is a graphical demonstration of the number of new cases by date in Vietnam from the first outbreak in January to 7 October 2020. 
+
+
+```{r demo-plot}
+library(ggplot2)
+library(plotly)
+library(dplyr)
+p4 <- patient_node %>%
+       count(date_announced) %>%
+       rename("cases" = n) %>%
+       arrange(date_announced) %>%
+       ggplot(aes(x = date_announced, y = cases)) +
+       geom_histogram(stat = "identity",fill = "#f03b20") +
+       theme_minimal() +
+       ggtitle("New cases by date")
+     
+ggplotly(p4)
 ```
 

@@ -3,14 +3,28 @@
 \docType{data}
 \name{vietnam_daily}
 \alias{vietnam_daily}
-\title{Read the csv file for Vietnam cases by province}
+\title{Count of Vietnam cases and deaths by province}
 \format{
 An object of class \code{data.frame} with 43 rows and 5 columns.
+}
+\source{
+Vietnam's MOH at \url{https://ncov.moh.gov.vn}
 }
 \usage{
 vietnam_daily
 }
 \description{
-Return the dataset for Vietnam cases and deaths by province updated the latest by 10 Oct 2020
+vietnam_daily returns the dataset for Vietnam cases and deaths by province.
+Updated the latest by 10 Oct 2020. Data was collected manually from the main page of Vietnam Ministry of Health.
+}
+\details{
+The data contained the following variables:
+\tabular{ll}{
+province: \tab The provinces that reported having confirmed cases. This variable does not contain all of the provinces in  Vietnam \cr
+cumulative_case: \tab The number of cummulative cases by 10 October 2020 \cr
+Active: \tab The number of active cases that remained by 10 October 2020 \cr
+Recovered: \tab The number of recovered cases by 10 October 2020 \cr
+Death: \tab The number of death by reported by 10 October 2020 \cr
+}
 }
 \keyword{datasets}

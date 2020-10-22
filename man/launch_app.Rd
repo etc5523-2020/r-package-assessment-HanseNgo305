@@ -7,5 +7,6 @@
 launch_app()
 }
 \description{
-this function will launch the shiny app dashboard embedded in the package
+this function will launch the shiny app dashboard that was embedded in the package.
+After you installed the package, simply load the package and type the command launch_app() in the console.
 }

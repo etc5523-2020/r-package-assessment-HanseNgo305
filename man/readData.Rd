@@ -7,8 +7,11 @@
 readData(name)
 }
 \arguments{
-\item{name}{name of the csv file with out the ".csv". Cases and typos sensitive}
+\item{name}{name of the csv file without the ".csv". Cases and typos sensitive}
 }
 \description{
-This function is used to read all of the local csv files and assign to variables for later use
+This function is used to read all of the local csv files and assign to variables for later use. All csv files are stored in folder extdata nested under the inst folder.
+}
+\examples{
+\dontrun{patient_link <- readData("patient_link")}
 }

@@ -27,7 +27,9 @@ Imports:
     DT,
     echarts4r,
     magrittr,
-    dplyr
+    dplyr,
+    tibble,
+    ggplot2
 Suggests: 
     testthat,
     knitr,
