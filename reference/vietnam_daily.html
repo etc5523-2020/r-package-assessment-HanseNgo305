@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Read the csv file for Vietnam cases by province — vietnam_daily • vietnamcovid19</title>
+<title>Count of Vietnam cases and deaths by province — vietnam_daily • vietnamcovid19</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="Read the csv file for Vietnam cases by province — vietnam_daily" />
-<meta property="og:description" content="Return the dataset for Vietnam cases and deaths by province updated the latest by 10 Oct 2020" />
+<meta property="og:title" content="Count of Vietnam cases and deaths by province — vietnam_daily" />
+<meta property="og:description" content="vietnam_daily returns the dataset for Vietnam cases and deaths by province.
+Updated the latest by 10 Oct 2020. Data was collected manually from the main page of Vietnam Ministry of Health." />
 
 
 
@@ -120,13 +121,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Read the csv file for Vietnam cases by province</h1>
+    <h1>Count of Vietnam cases and deaths by province</h1>
     <small class="dont-index">Source: <a href='https://github.com/etc5523-2020/r-package-assessment-HanseNgo305/blob/master/R/readcsv.R'><code>R/readcsv.R</code></a></small>
     <div class="hidden name"><code>vietnam_daily.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Return the dataset for Vietnam cases and deaths by province updated the latest by 10 Oct 2020</p>
+    <p>vietnam_daily returns the dataset for Vietnam cases and deaths by province.
+Updated the latest by 10 Oct 2020. Data was collected manually from the main page of Vietnam Ministry of Health.</p>
     </div>
 
     <pre class="usage"><span class='va'>vietnam_daily</span></pre>
@@ -135,6 +137,20 @@
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>An object of class <code>data.frame</code> with 43 rows and 5 columns.</p>
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>Vietnam's MOH at <a href='https://ncov.moh.gov.vn'>https://ncov.moh.gov.vn</a></p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The data contained the following variables:</p><table class='table'>
+<tr><td>province:</td><td>The provinces that reported having confirmed cases. This variable does not contain all of the provinces in  Vietnam</td></tr>
+<tr><td>cumulative_case:</td><td>The number of cummulative cases by 10 October 2020</td></tr>
+<tr><td>Active:</td><td>The number of active cases that remained by 10 October 2020</td></tr>
+<tr><td>Recovered:</td><td>The number of recovered cases by 10 October 2020</td></tr>
+<tr><td>Death:</td><td>The number of death by reported by 10 October 2020</td></tr>
+</table>
+
+
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
