@@ -1,3 +1,16 @@
 template:
   params:
     bootswatch: readable
+
+navbar:
+  structure:
+    left: [help]
+    right: [github]
+  components:
+    home: ~
+    help:
+      text: Get started
+      href: articles/vietnamcovid19-package.html
+    github:
+      icon: fab fa-github
+      href: https://github.com/etc5523-2020/r-package-assessment-HanseNgo305
